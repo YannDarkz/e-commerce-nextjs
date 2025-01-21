@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import clsx from "clsx";
 import "./globals.css";
 import Navbar from './components/Navbar'
+import { ClerkProvider } from "@clerk/nextjs";
+import { ptBR } from "@clerk/localizations";
 
 
 const geistSans = Geist({
@@ -26,14 +28,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className=" " lang="en">
-      <body className={`${clsx('antialiased', 'bg-slate-700', 'p-4')} `}>
-        <Navbar />
+    <ClerkProvider localization={ptBR}>
+      <html className=" " lang="en">
+        <body className={`${clsx('antialiased', 'bg-slate-700', 'p-4')} `}>
+          <Navbar />
 
-        <main className=" h-screen p-16">
-          {children}
-        </main>
-      </body>
-    </html>
+          <main className=" h-screen p-16">
+            {children}
+          </main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
