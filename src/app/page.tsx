@@ -42,7 +42,6 @@ export default async function Home() {
         {products.map((product) => (
           <Product key={product.id} product={product}></Product>
         ))}
-        euu
 
       </div>
     </div>
