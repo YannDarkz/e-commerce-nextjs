@@ -17,5 +17,6 @@ model User {
   attributes Json
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  stipeCustomerId String?
 
 }
