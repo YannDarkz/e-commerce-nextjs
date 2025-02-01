@@ -1,3 +1,5 @@
+'use client'
+
 import { useCartStore } from '@/store';
 import { useEffect, useState } from 'react';
 
@@ -21,7 +23,7 @@ export default function Checkout() {
         setClientSecret(data.paymentIntent?.client_secret);
       });
   
-    }, [cartStore, cartStore.cart, cartStore.paymentIntent]);
+    }, [ cartStore.cart, cartStore.paymentIntent]);
 
     return(
         <div>
